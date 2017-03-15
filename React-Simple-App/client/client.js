@@ -4,9 +4,8 @@ import configureStore from '../redux/store'
 import {Provider} from 'react-redux'
 import App from '../components/App'
 
-
 let initialState ={
-  customers:[]
+  "customers": []
 }
 
 let store = configureStore(initialState)

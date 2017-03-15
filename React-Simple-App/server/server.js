@@ -32,8 +32,10 @@ app.get('/customers', function(req, res) {
 	})
 })
 app.post('/savecustomer', function(req, res) {
-	customerModel.saveCustomer(req.body);
-  res.send('Success');
+  customerModel.saveCustomer(req.body,
+    function(result){
+		  	return res.send(result);
+	})
 })
 app.post('/deletecustomer/:customerid', function(req, res) {
   customerModel.deleteCustomer(req.params.customerid);
