@@ -5,10 +5,7 @@ import RadioField from './fields/RadioField'
 
 class ScreenField extends Component {
     bindNewState(newState) {
-        const petList = Object.entries(newState).map(([key, value]) => {
-          console.log(key+':'+value.toString());
-        })
-        this.setState([...this.state,newState])
+        //this.setState([...this.state,newState]) --Not Working
     }
     render() {
         return (
