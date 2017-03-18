@@ -13,30 +13,31 @@ class InputField extends Component {
         })
 
     }
-    shouldComponentUpdate(nextProps, nextState){
-      this.props.handleStateChange(nextState);
-      return true
+    shouldComponentUpdate(nextProps, nextState) {
+        this.props.handleStateChange(nextState);
+        return true
     }
     render() {
         return (this.props.screenField.fieldType === 'INPUT'
-            ? <div className='form-group'>
-                    <label className="col-md-4 control-label" htmlFor="AC">{this.props.screenField.label}</label>
-                    <div className="col-md-4">
-                        <input type={this.props.screenField.dataType === 'BOOLEAN'
-                            ? 'checkbox'
-                            : this.props.screenField.dataType}
-                            name={this.props.screenField.name}
-                            id={this.props.screenField.name}
-                            placeholder={this.props.screenField.helpText}
-                            required={this.props.screenField.isRequired}
-                            value={this.state[this.props.screenField.name]}
-                            className={this.props.screenField.dataType !== 'BOOLEAN'
-                                ? 'form-control input-md'
-                                : this.props.screenField.dataType}
-                            onChange={this.onChange.bind(this)}/>
-                    </div>
+            ?
+            <div className='form-group'>
+                <label className="col-md-4 control-label" htmlFor="AC">{this.props.screenField.label}</label>
+                <div className="col-md-4">
+                    <input type={this.props.screenField.dataType === 'BOOLEAN'
+                        ? 'checkbox'
+                        : this.props.screenField.dataType}
+                        name={this.props.screenField.name}
+                        id={this.props.screenField.name}
+                        placeholder={this.props.screenField.helpText}
+                        required={this.props.screenField.isRequired}
+                        value={this.state[this.props.screenField.name]}
+                        className={this.props.screenField.dataType !== 'BOOLEAN'
+                        ? 'form-control input-md'
+                        : this.props.screenField.dataType}
+                        onChange={this.onChange.bind(this)}/>
                 </div>
-            : null)
+            </div>
+        :null)
     }
 }
 

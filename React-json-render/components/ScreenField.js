@@ -4,15 +4,22 @@ import LabelField from './fields/LabelField'
 import RadioField from './fields/RadioField'
 
 class ScreenField extends Component {
-    bindNewState(newState) {
-        //this.setState([...this.state,newState]) --Not Working
+    constructor() {
+        super()
+        this.bindNewState = this.bindNewState.bind(this)
+    }
+    bindNewState(name, newState) {
+        this.props.handleStateChange(newState);
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props !== nextProps;
     }
     render() {
         return (
             <span>
-                <InputField screenField={this.props.screenField} handleStateChange={(newState) => this.bindNewState(newState)}/>
-                <LabelField screenField={this.props.screenField} handleStateChange={(newState) => this.bindNewState(newState)}/>
-                <RadioField screenField={this.props.screenField} handleStateChange={(newState) => this.bindNewState(newState)}/>
+                <InputField screenField={this.props.screenField} handleStateChange={(newState) => this.bindNewState(this.props.screenField.name, newState)}/>
+                <LabelField screenField={this.props.screenField} handleStateChange={(newState) => this.bindNewState(this.props.screenField.name, newState)}/>
+                <RadioField screenField={this.props.screenField} handleStateChange={(newState) => this.bindNewState(this.props.screenField.name, newState)}/>
             </span>
         )
     }

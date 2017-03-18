@@ -7,7 +7,7 @@ class MyPage extends Component {
         super(props, context)
     }
     componentDidMount() {
-        //
+        this.props.actions.loadInitJSONSchema();
     }
     render() {
         return (

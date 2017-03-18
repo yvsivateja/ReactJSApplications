@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
-import ScreenField from './ScreenField'
+import InputField from './fields/InputField'
+import LabelField from './fields/LabelField'
+import RadioField from './fields/RadioField'
 import MyButton from './fields/MyButton'
 
 class MyForm extends Component {
@@ -9,10 +11,16 @@ class MyForm extends Component {
     componentDidMount() {
         //
     }
+    bindNewState(newState) {
+        this.setState(newState)
+    }
     formSubmitHandler(event) {
         event.preventDefault();
         console.log("action called")
         console.log(this.state)
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props !== nextProps;
     }
     render() {
         return (
@@ -20,7 +28,13 @@ class MyForm extends Component {
                 <fieldset>
                     <legend>{this.props.myform.flowLabel}</legend>
                     {this.props.myform.screenFields.map((screenField, index) => {
-                        return <ScreenField key={index + 1} index={index + 1} screenField={screenField} actions={this.props.actions}/>
+                        return (
+                            <span key={index} >
+                                <InputField screenField={screenField} handleStateChange={(newState) => this.bindNewState(newState)}/>
+                                <LabelField screenField={screenField} handleStateChange={(newState) => this.bindNewState(newState)}/>
+                                <RadioField screenField={screenField} handleStateChange={(newState) => this.bindNewState(newState)}/>
+                            </span>
+                        )
                     })}
                     <MyButton myform={this.props.myform}/>
                 </fieldset>

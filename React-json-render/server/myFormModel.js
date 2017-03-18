@@ -96,7 +96,7 @@ var myFormModel = {
                 "state": "rO0ABXNyACRpbnRlcmFjdGlvbi5lbmdpbmUuYXBpLkludGVydmlld0ltcGwAAAAAAAAAAQIADFoACnNob3dFcnJvcnNMAAdhY3Rpb25zdAAQTGphdmEvdXRpbC9MaXN0O0wADWVycm9yTWVzc2FnZXNxAH4AAUwABmVycm9yc3QAD0xqYXZhL3V0aWwvTWFwO0wABmZpZWxkc3EAfgABTAAIaGVscFRleHR0ABJMamF2YS9sYW5nL1N0cmluZztMAAlpbnRlcnZpZXd0AChMaW50ZXJhY3RpbA=="
             }
         ];
-        return {customers: interviewResponseBody};
+        return {results: interviewResponseBody};
     }
 }
 
