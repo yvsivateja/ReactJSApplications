@@ -7,7 +7,12 @@ class RadioField extends Component {
             [this.props.screenField.name]: this.props.screenField.value
         };
     }
+    shouldComponentUpdate(nextProps, nextState){
+      this.props.handleStateChange(nextState);
+      return true
+    }
     onChange(event) {
+        console.log(event.target.name+':'+event.target.value);
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -23,11 +28,12 @@ class RadioField extends Component {
                             return (
                                 <label key={index} className='radio-inline'
                                   htmlFor={choiceField.name}>
-                                    <input type="radio" name={choiceField.name}
-                                      checked={choiceField.isSelected}
+                                    <input type="radio"
+                                      name={this.props.screenField.name}
+                                      checked={this.state[this.props.screenField.name] === choiceField.name}
                                       id={choiceField.name}
                                       onChange={this.onChange.bind(this)}
-                                      />
+                                      value={choiceField.name}/>
                                     {choiceField.label}
                                 </label>
                             )

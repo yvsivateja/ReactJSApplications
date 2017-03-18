@@ -11,6 +11,11 @@ class InputField extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+
+    }
+    shouldComponentUpdate(nextProps, nextState){
+      this.props.handleStateChange(nextState);
+      return true
     }
     render() {
         return (this.props.screenField.fieldType === 'INPUT'
