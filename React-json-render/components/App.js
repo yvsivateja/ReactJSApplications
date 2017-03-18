@@ -7,7 +7,9 @@ import actions from '../actions/formActions'
 class App extends Component {
     render() {
         return (
-          <MyPage formSchema={this.props.formSchema} actions={this.props.actions}/>
+            <div className="main-content">
+                <MyPage formSchema={this.props.formSchema} actions={this.props.actions}/>
+            </div>
         )
     }
 }

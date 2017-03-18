@@ -5,7 +5,7 @@ class LabelField extends Component {
         return (
           this.props.screenField.fieldType === 'DISPLAY_TEXT'
             ? <div className='form-group'>
-                    <label>{this.props.screenField.label}</label>
+                    <label className='col-md-8 control-label'>{this.props.screenField.label}</label>
                 </div>
             : null)
     }
