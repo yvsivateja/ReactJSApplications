@@ -30,7 +30,7 @@ app.get('/startInterview', function(req, res) {
     return res.send(myFormModel.getinitdata())
 })
 app.post('/saveUserInputs', function(req, res) {
-    myFormModel.saveAndGetNextStep(req.body, function(result) {
+    myFormModel.saveUserInputs(req.body, function(result) {
         return res.send(result);
     })
 })

@@ -12,14 +12,13 @@ class RadioField extends Component {
       return true
     }
     onChange(event) {
-        console.log(event.target.name+':'+event.target.value);
         this.setState({
             [event.target.name]: event.target.value
         })
     }
     render() {
-        return (this.props.screenField.fieldType === 'RADIO_BUTTONS'
-            ? <div className='form-group'>
+        return (
+          <div className='form-group'>
                     <label className='col-md-4 control-label'>
                         <span>{this.props.screenField.label}</span>
                     </label>
@@ -40,7 +39,7 @@ class RadioField extends Component {
                         })}
                     </div>
                 </div>
-            : null)
+            )
     }
 }
 

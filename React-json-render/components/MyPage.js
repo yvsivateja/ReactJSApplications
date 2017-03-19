@@ -7,16 +7,24 @@ class MyPage extends Component {
         super(props, context)
     }
     componentDidMount() {
-        this.props.actions.loadInitJSONSchema();
+      $.ajax({
+           url: '/startInterview',
+           dataType: 'json',
+           success: (data) => {
+              console.log(data.results)
+               this.props.actions.loadInitJSONSchema(data.results);
+           },
+           error: (xhr, status, err) => {
+               console.error(this.props.url, status, err.toString());
+           }
+       });
     }
     render() {
-        return (
-          this.props.formSchema && this.props.formSchema[0]
+        return (this.props.formSchema && this.props.formSchema[0]
             ? <MyForm myform={this.props.formSchema[0]} actions={this.props.actions}/>
             : <p>
                 Page not rendered!!!
-            </p>
-          )
+            </p>)
     }
 }
 
