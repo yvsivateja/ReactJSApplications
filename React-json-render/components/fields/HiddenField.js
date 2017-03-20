@@ -8,7 +8,6 @@ class HiddenField extends Component {
         };
     }
     componentWillReceiveProps(nextProps) {
-        console.log("componentWillReceiveProps : " + nextProps.screenField.name + ":" + nextProps.screenField.value)
         this.setState({
             [nextProps.screenField.name]: nextProps.screenField.value
         })

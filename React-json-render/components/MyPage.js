@@ -1,23 +1,12 @@
 import React, {Component} from 'react'
 import MyForm from './MyForm'
-import $ from 'jquery'
 
 class MyPage extends Component {
     constructor(props, context) {
         super(props, context)
     }
     componentDidMount() {
-      $.ajax({
-           url: '/startInterview',
-           dataType: 'json',
-           success: (data) => {
-              console.log(data.results)
-               this.props.actions.loadInitJSONSchema(data.results);
-           },
-           error: (xhr, status, err) => {
-               console.error(this.props.url, status, err.toString());
-           }
-       });
+       this.props.actions.loadInitialJSONSchema();
     }
     render() {
         return (this.props.formSchema && this.props.formSchema[0]

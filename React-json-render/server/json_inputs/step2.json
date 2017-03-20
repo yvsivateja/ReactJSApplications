@@ -42,12 +42,12 @@
         }],
         "fieldType": "INPUT",
         "helpText": "Please enter the Client Name here",
-        "isRequired": false,
+        "isRequired": true,
         "isValidValue": false,
         "label": "Client Name",
         "name": "Client_Name",
         "triggersUpdate": false,
-        "value": ""
+        "value": "ABCD"
     }, {
         "choices": null,
         "dataType": "EMAIL",

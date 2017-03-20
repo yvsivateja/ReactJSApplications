@@ -51,7 +51,7 @@
         "dataType": "EMAIL",
         "errorMessages": null,
         "fieldType": "INPUT",
-        "helpText": null,
+        "helpText": "Please enter the Client Email here",
         "isRequired": true,
         "isValidValue": true,
         "label": "Client Email",
