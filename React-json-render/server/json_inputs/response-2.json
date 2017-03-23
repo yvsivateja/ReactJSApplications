@@ -1,0 +1,74 @@
+[{
+    "availableActions": [{
+            "id": "BACK",
+            "label": "Previous"
+        },
+        {
+            "id": "NEXT",
+            "label": "Next"
+        }
+    ],
+    "errorMessages": [],
+    "flowLabel": "Advisor-to-Client Onboarding Flow",
+    "guid": "719083d80467cdab997378f6d0c615aa625d3f0-2ef7",
+    "helpText": null,
+    "interviewStatus": "STARTED",
+    "outputVariables": [],
+    "pausedText": null,
+    "screenFields": [{
+        "choices": null,
+        "dataType": "HIDDEN",
+        "errorMessages": null,
+        "fieldType": "INPUT",
+        "helpText": null,
+        "isRequired": false,
+        "isValidValue": true,
+        "label": "",
+        "name": "Next_Step",
+        "triggersUpdate": false,
+        "value": "STEP-2"
+    }, {
+        "choices": [{
+                "isSelected": true,
+                "label": "New Client",
+                "name": "New_Client",
+                "text": "",
+                "userInput": null
+            },
+            {
+                "isSelected": false,
+                "label": "Copy an Existing Client",
+                "name": "Copy_an_Existing_Client",
+                "text": "",
+                "userInput": null
+            },
+            {
+                "isSelected": false,
+                "label": "Copy an Existing Application",
+                "name": "Copy_an_Existing_Application",
+                "text": "",
+                "userInput": {
+                    "dataType": "STRING",
+                    "errorMessages": null,
+                    "isRequired": false,
+                    "isValidValue": true,
+                    "label": "",
+                    "name": "Copy_an_Existing_Application",
+                    "value": null
+                }
+            }
+        ],
+        "dataType": "STRING",
+        "errorMessages": null,
+        "fieldType": "DROPDOWN",
+        "helpText": null,
+        "isRequired": true,
+        "isValidValue": true,
+        "label": "Application Process",
+        "name": "Application_Process",
+        "triggersUpdate": false,
+        "value": null
+    }],
+    "screenName": "Client_Search",
+    "state": "rO0ABXNyACRpbnRlcmFjdGlvbi5lbmdpbmUuYXBpLkludGVydmlld0ltcGwAAAAAAAAAAQIADFoACnNob3dFcnJvcnNMAAdhY3Rpb25zdAAQTGphdmEvdXRpbC9MaXN0O0wADWVycm9yTWVzc2FnZXNxAH4AAUwABmVycm9yc3QAD0xqYXZhL3V0aWwvTWFwO0wABmZpZWxkc3EAfgABTAAIaGVscFRleHR0ABJMamF2YS9sYW5nL1N0cmluZztMAAlpbnRlcnZpZXd0AChMaW50ZXJhY3Rpb24vZW5naW5lL2ludGVydmlldy9JbnRlcnZpZXc7TAAOaW50ZXJ2aWV3TGFiZWxxAH4AA0wACmtleUZhY3Rvcnl0ADRMaW50ZXJhY3Rpb24vZW5naW5lL2FwaS9JbnRlcnZpZXdSZXF1ZXN0S2V5JEZhY3Rvcnk7TAAKbG9jYXRpb25JZHEAfgADTAAKcGF1c2VkVGV4dHEAfgADTAALd2FpdE1lc3NhZ2VxAH4AA3hwAHNyADZjb20uZ29vZ2xlLmNvbW1vbi5jb2xsZWN0LkltbXV0YWJsZUxpc3QkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAVsACGVsZW1lbnRzdAATW0xqYXZhL2xhbmcvT2JqZWN0O3hwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAAAnNyACppbnRlcmFjdGlvbi5lbmdpbmUuYXBpLkludGVydmlld0FjdGlvbkltcGxujs/86fhEdwIAAkwAAmlkcQB+AANMAAhsYWJlbFJlZnQAGUxjb20vZm9yY2UvaTE4bi9MYWJlbFJlZjt4cHQABEJBQ0tzcgAXY29tLmZvcmNlLmkxOG4uTGFiZWxSZWYAAAAAAAAAAQIAA1sABGFyZ3NxAH4ACEwAA2tleXEAfgADTAAHc2VjdGlvbnEAfgADeHB1cQB+AAoAAAAAdAAKYmFja0J1dHRvbnQADUludGVydmlld0Zvcm1zcQB+AAx0AARORVhUc3EAfgAQcQB+ABJ0AApuZXh0QnV0dG9ucQB+ABRzcQB+AAd1cQB+AAoAAAAAcHNxAH4AB3VxAH4ACgAAAAFzcgAraW50ZXJhY3Rpb24uZW5naW5lLmFwaS5DaG9pY2VJbnRlcnZpZXdGaWVsZJt4T790nCJnAgAJWgANaGFzU2NyZWVuUnVsZVoACHJlcXVpcmVkTAAHY2hvaWNlc3QAKUxjb20vZ29vZ2xlL2NvbW1vbi9jb2xsZWN0L0ltbXV0YWJsZUxpc3Q7TAAIZGF0YVR5cGV0AClMbW9kdWxlYXBpL2ludGVyYWN0aW9uL0ludGVydmlld0RhdGFUeXBlO0wADWVycm9yTWVzc2FnZXNxAH4AHkwACWZpZWxkVGV4dHEAfgADTAAJZmllbGRUeXBldAA5TG1vZHVsZWFwaS9pbnRlcmFjdGlvbi9JbnRlcnZpZXdGaWVsZCRJbnRlcnZpZXdGaWVsZFR5cGU7TAAIaGVscFRleHRxAH4AA0wABG5hbWVxAH4AA3hwAAFzcQB+AAd1cQB+AAoAAAADc3IAKmludGVyYWN0aW9uLmVuZ2luZS5hcGkuSW50ZXJ2aWV3Q2hvaWNlSW1wbIoivU0svpXLAgAGWgAKaXNTZWxlY3RlZEwAB2Rldk5hbWVxAH4AA0wABWxhYmVscQB+AANMAAZwYXJlbnR0AC1MaW50ZXJhY3Rpb24vZW5naW5lL2FwaS9DaG9pY2VJbnRlcnZpZXdGaWVsZDtMAAR0ZXh0cQB+AANMAAl1c2VySW5wdXR0AEBMbW9kdWxlYXBpL2ludGVyYWN0aW9uL0ludGVydmlld0Nob2ljZSRJbnRlcnZpZXdDaG9pY2VVc2VySW5wdXQ7eHABdAAKTmV3X0NsaWVudHQACk5ldyBDbGllbnRxAH4AIXQAAHBzcQB+ACQAdAAXQ29weV9hbl9FeGlzdGluZ19DbGllbnR0ABdDb3B5IGFuIEV4aXN0aW5nIENsaWVudHEAfgAhdAAAcHNxAH4AJAB0ABxDb3B5X2FuX0V4aXN0aW5nX0FwcGxpY2F0aW9udAAcQ29weSBhbiBFeGlzdGluZyBBcHBsaWNhdGlvbnEAfgAhdAAAc3IAM2ludGVyYWN0aW9uLmVuZ2luZS5hcGkuSW50ZXJ2aWV3Q2hvaWNlVXNlcklucHV0SW1wbCk9XDYJLITXAgAIWgAKaXNSZXF1aXJlZEwADWVycm9yTWVzc2FnZXNxAH4AAUwACWZpZWxkVHlwZXEAfgAgTAAMaW52YWxpZFZhbHVldAAWTGphdmEvaW8vU2VyaWFsaXphYmxlO0wABnBhcmVudHQALExpbnRlcmFjdGlvbi9lbmdpbmUvYXBpL0ludGVydmlld0Nob2ljZUltcGw7TAAGcHJvbXB0cQB+AANMAAhyYXdWYWx1ZXEAfgA0TAAFdmFsdWV0ACZMbW9kdWxlYXBpL2ludGVyYWN0aW9uL0ludGVydmlld1ZhbHVlO3hyAClpbnRlcmFjdGlvbi5lbmdpbmUuYXBpLkJhc2VJbnRlcnZpZXdWYWx1ZdtgHCv5V6p2AgAAeHAAcH5yADdtb2R1bGVhcGkuaW50ZXJhY3Rpb24uSW50ZXJ2aWV3RmllbGQkSW50ZXJ2aWV3RmllbGRUeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAFSU5QVVRwcQB+AC90AABwc3IAUWludGVyYWN0aW9uLmVuZ2luZS5hcGkuSW50ZXJ2aWV3Q2hvaWNlVXNlcklucHV0SW1wbCRDaG9pY2VVc2VySW5wdXRJbnRlcnZpZXdWYWx1ZcWO/I/Yr22xAgABTAAGdGhpcyQwdAA1TGludGVyYWN0aW9uL2VuZ2luZS9hcGkvSW50ZXJ2aWV3Q2hvaWNlVXNlcklucHV0SW1wbDt4cQB+ADdxAH4AOH5yACdtb2R1bGVhcGkuaW50ZXJhY3Rpb24uSW50ZXJ2aWV3RGF0YVR5cGUAAAAAAAAAABIAAHhxAH4AOnQABlNUUklOR3B0ABNBcHBsaWNhdGlvbiBQcm9jZXNzfnEAfgA5dAAIRFJPUERPV05wdAATQXBwbGljYXRpb25fUHJvY2Vzc3BzcgAmaW50ZXJhY3Rpb24uZW5naW5lLmludGVydmlldy5JbnRlcnZpZXcAAAAAAAAAAQIAB1oAEXVzZUxhdGVzdFN1YmZsb3dzTAAUY3VycmVudE5vZGVSZWZlcmVuY2V0ADNMaW50ZXJhY3Rpb24vZW5naW5lL2ludGVydmlldy9FbGVtZW50SW5mb1JlZmVyZW5jZTtMAARndWlkcQB+AANMAAJpZHEAfgADTAAHam91cm5hbHQAL0xpbnRlcmFjdGlvbi9lbmdpbmUvaW50ZXJ2aWV3L0ludGVydmlld0pvdXJuYWw7TAALc3RhcnRGbG93SWRxAH4AA0wAGHZpc2l0ZWRTdWJmbG93VmVyc2lvbklkc3EAfgACeHABc3IAMWludGVyYWN0aW9uLmVuZ2luZS5pbnRlcnZpZXcuRWxlbWVudEluZm9SZWZlcmVuY2UAAAAAAAAAAQIAAkwADmVsZW1lbnREZXZOYW1lcQB+AANMABBmbG93VmVyc2lvblVkZElkcQB+AAN4cHQADUNsaWVudF9TZWFyY2h0AA8zMDE1NTAwMDAwMEZEd3h0ACw3MTkwODNkODA0NjdjZGFiOTk3Mzc4ZjZkMGM2MTVhYTYyNWQzZjAtMmVmN3BzcgAtaW50ZXJhY3Rpb24uZW5naW5lLmludGVydmlldy5JbnRlcnZpZXdKb3VybmFsAAAAAAAAAAECAAB4cgATamF2YS51dGlsLkFycmF5TGlzdHiB0h2Zx2GdAwABSQAEc2l6ZXhwAAAAAncEAAAAAnNyADFpbnRlcmFjdGlvbi5lbmdpbmUuaW50ZXJ2aWV3LkludGVydmlld0pvdXJuYWxJdGVtAAAAAAAAAAECAAZMABBlbGVtZW50UmVmZXJlbmNlcQB+AElMAAdtZXNzYWdlcQB+AANMAAlyYXdWYWx1ZXNxAH4AAkwACXRpbWVzdGFtcHQAEExqYXZhL3V0aWwvRGF0ZTtMAAR0eXBldABMTGludGVyYWN0aW9uL2VuZ2luZS9pbnRlcnZpZXcvSW50ZXJ2aWV3Sm91cm5hbEl0ZW0kSW50ZXJ2aWV3Sm91cm5hbEl0ZW1UeXBlO0wABnVzZXJJZHEAfgADeHBwcHBzcgAOamF2YS51dGlsLkRhdGVoaoEBS1l0GQMAAHhwdwgAAAFaplFdInh+cgBKaW50ZXJhY3Rpb24uZW5naW5lLmludGVydmlldy5JbnRlcnZpZXdKb3VybmFsSXRlbSRJbnRlcnZpZXdKb3VybmFsSXRlbVR5cGUAAAAAAAAAABIAAHhxAH4AOnQABVNUQVJUdAAPMDA1NTUwMDAwMDJTMlJUc3EAfgBUc3EAfgBMdAAKS1lDX1dpemFyZHEAfgBPcHNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAZ3CAAAAAgAAAAEdAAZWWVhcnNfS25vd25fdGhlX0FwcGxpY2FudHNyABRqYXZhLm1hdGguQmlnRGVjaW1hbFTHFVf5gShPAwACSQAFc2NhbGVMAAZpbnRWYWx0ABZMamF2YS9tYXRoL0JpZ0ludGVnZXI7eHIAEGphdmEubGFuZy5OdW1iZXKGrJUdC5TgiwIAAHhwAAAAAHNyABRqYXZhLm1hdGguQmlnSW50ZWdlcoz8nx+pO/sdAwAGSQAIYml0Q291bnRJAAliaXRMZW5ndGhJABNmaXJzdE5vbnplcm9CeXRlTnVtSQAMbG93ZXN0U2V0Qml0SQAGc2lnbnVtWwAJbWFnbml0dWRldAACW0J4cQB+AGb///////////////7////+AAAAAXVyAAJbQqzzF/gGCFTgAgAAeHAAAAABA3h4dAARTWV0X3RoZV9BcHBsaWNhbnRzcgARamF2YS5sYW5nLkJvb2xlYW7NIHKA1Zz67gIAAVoABXZhbHVleHABdAAMQWR2aXNvcl9Db2RldAAEMTExMXQAIkFkdmlzb3JfQ2xpZW50X1Jlc2lkZV9zYW1lX0NvdW50cnl0AANZZXN4c3EAfgBYdwgAAAFa7KwY9nh+cQB+AFp0AAhMT0NBVElPTnB4dAAPMzAxNTUwMDAwMDBGRHd4cHQAMUFkdmlzb3ItQ2xpZW50IE9uYm9hcmRpbmcgRmxvdyAyMC8wMy8yMDE3IDE6MDMgUE1zcgAyaW50ZXJhY3Rpb24uZW5naW5lLmFwaS5JbnRlcnZpZXdSZXF1ZXN0S2V5JEZhY3RvcnnCdWoveLZNWAIABEwACWNob2ljZU1hcHQAKExjb20vZ29vZ2xlL2NvbW1vbi9jb2xsZWN0L0ltbXV0YWJsZU1hcDtMAA5jdXJyZW50RWxlbWVudHEAfgADTAAIZmllbGRNYXBxAH4AekwAEGlucHV0VmFyaWFibGVNYXBxAH4Aenhwc3IANWNvbS5nb29nbGUuY29tbW9uLmNvbGxlY3QuSW1tdXRhYmxlTWFwJFNlcmlhbGl6ZWRGb3JtAAAAAAAAAAACAAJbAARrZXlzcQB+AAhbAAZ2YWx1ZXNxAH4ACHhwdXEAfgAKAAAAA3NyACFjb20uZm9yY2UuY29tbW9ucy5jb2xsZWN0aW9uLlBhaXIAAAAAAAAAAgIAAkwABWZpcnN0dAASTGphdmEvbGFuZy9PYmplY3Q7TAAGc2Vjb25kcQB+AIB4cHEAfgBHcQB+AChzcQB+AH9xAH4AR3EAfgAsc3EAfgB/cQB+AEdxAH4AMHVxAH4ACgAAAANxAH4AJ3EAfgArcQB+AC9xAH4ATnNyADdjb20uZ29vZ2xlLmNvbW1vbi5jb2xsZWN0LkltbXV0YWJsZUJpTWFwJFNlcmlhbGl6ZWRGb3JtAAAAAAAAAAACAAB4cQB+AHx1cQB+AAoAAAABcQB+AEd1cQB+AAoAAAABcQB+ACFzcQB+AIV1cQB+AAoAAAAAdXEAfgAKAAAAAHEAfgBOcHA="
+}]

@@ -31,13 +31,13 @@ app.get('/startInterview', function(req, res) {
 })
 app.post('/saveUserInputs', function(req, res) {
     myFormModel.saveUserInputs(req.body, function(result) {
+        console.log(req.body);
         return res.send(result);
     })
 })
-var port = 3000;
-
-app.listen(port, function(error) {
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), function(error) {
     if (error)
         throw error;
-    console.log("Express server listening on port", port);
+    console.log("Express server listening on port", app.get('port'));
 });

@@ -18,10 +18,8 @@ class InputField extends Component {
     }
     render() {
         return (<div className='form-group'>
-                    {this.props.screenField.label !== ""
-                        ? <label className="col-md-4 control-label" htmlFor={this.props.screenField.name}>
-                                {this.props.screenField.label}</label>
-                        : ''}
+                    <label className="col-md-4 control-label" htmlFor={this.props.screenField.name}>
+                              {this.props.screenField.label}</label>
                     <div className="col-md-4">
                         <input type={this.props.screenField.dataType === 'BOOLEAN'
                             ? 'checkbox'

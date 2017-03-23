@@ -3,6 +3,7 @@ import InputField from './fields/InputField'
 import LabelField from './fields/LabelField'
 import RadioField from './fields/RadioField'
 import HiddenField from './fields/HiddenField'
+import SelectField from './fields/SelectField'
 import MyButton from './fields/MyButton'
 
 class MyForm extends Component {
@@ -38,6 +39,9 @@ class MyForm extends Component {
                                     : null}
                                 {screenField.fieldType === 'RADIO_BUTTONS'
                                     ? <RadioField screenField={screenField} handleStateChange={(newState) => this.bindNewState(newState)}/>
+                                    : null}
+                                {screenField.fieldType === 'DROPDOWN'
+                                    ? <SelectField screenField={screenField} handleStateChange={(newState) => this.bindNewState(newState)}/>
                                     : null}
                             </span>
                         )
