@@ -8,7 +8,7 @@ class RadioField extends Component {
         };
     }
     shouldComponentUpdate(nextProps, nextState){
-      this.props.handleStateChange(nextState);
+      this.props.handleStateChange(nextState)
       return true
     }
     onChange(event) {

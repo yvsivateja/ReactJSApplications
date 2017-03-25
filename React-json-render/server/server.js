@@ -4,8 +4,8 @@ var config = require('../webpack.config.js');
 var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
-var myFormModel = require('./myFormModel');
 var bodyParser = require('body-parser');
+var Client = require('node-rest-client').Client;
 
 var app = express();
 
@@ -27,13 +27,41 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/startInterview', function(req, res) {
-    return res.send(myFormModel.getinitdata())
+    var client = new Client();
+    //var bearerAccessToken = 'Bearer 00D550000006K7v!AQMAQDvgFo6kB39EiAjBhH4U.1sX842omrO5eunhu2ep_XEqY78UP4Ig7ZQIT1LhtzjTdZB0lGJ3Bp3vap.bsljKY1qFvJ1m';
+    var bearerAccessToken = 'Bearer ' + req.headers['token'];
+    var params = {
+        data: [],
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": bearerAccessToken
+        }
+    };
+    var appURL = 'https://mlc--dev14.cs41.my.salesforce.com/services/data/v37.0/process/interviews/Advisor_to_Client_Onboarding_Flow'
+
+    var req = client.post(appURL, params, function(data, response) {
+        return res.send(data);
+    });
+    req.on('error', function(err) {
+        console.log('request error', err);
+    });
 })
 app.post('/saveUserInputs', function(req, res) {
-    myFormModel.saveUserInputs(req.body, function(result) {
-        console.log(req.body);
-        return res.send(result);
-    })
+    var client = new Client();
+    //var bearerAccessToken = 'Bearer 00D550000006K7v!AQMAQDvgFo6kB39EiAjBhH4U.1sX842omrO5eunhu2ep_XEqY78UP4Ig7ZQIT1LhtzjTdZB0lGJ3Bp3vap.bsljKY1qFvJ1m';
+    var bearerAccessToken = 'Bearer ' + req.headers['token'];
+    var params = {
+        data: req.body.SFRequest,
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": bearerAccessToken
+        }
+    };
+    var appURL = 'https://mlc--dev14.cs41.my.salesforce.com/services/data/v37.0/process/interviews/Advisor_to_Client_Onboarding_Flow/' + req.body.guid
+
+    var req = client.patch(appURL, params, function(data, response) {
+        return res.send(data);
+    });
 })
 app.set('port', (process.env.PORT || 3000));
 app.listen(app.get('port'), function(error) {

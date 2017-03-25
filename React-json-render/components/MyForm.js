@@ -13,9 +13,10 @@ class MyForm extends Component {
     bindNewState(newState) {
         this.setState(newState)
     }
+    
     formSubmitHandler(event) {
         event.preventDefault();
-        this.props.actions.reloadJSONSchema(this.state);
+        this.props.actions.reloadJSONSchema(this.state, this.props);
     }
     shouldComponentUpdate(nextProps, nextState) {
         return this.props !== nextProps;
@@ -47,7 +48,7 @@ class MyForm extends Component {
                         )
                     })}
                     {this.props.myform.availableActions
-                        ? <MyButton myform={this.props.myform}/>
+                        ? <MyButton myform={this.props.myform} handleStateChange={(newState) => this.bindNewState(newState)}/>
                         : null}
                 </fieldset>
             </form>

@@ -1,19 +1,30 @@
 import React, {Component} from 'react'
-import MyForm from './MyForm'
+import LoadForm from './LoadForm'
+import TokenForm from './TokenForm'
 
 class MyPage extends Component {
     constructor(props, context) {
         super(props, context)
+        this.state = {
+            showForm: false
+        }
     }
-    componentDidMount() {
-       this.props.actions.loadInitialJSONSchema();
+
+    changeShowFormState(newState) {
+        this.setState({showForm: newState});
     }
     render() {
-        return (this.props.formSchema && this.props.formSchema[0]
-            ? <MyForm myform={this.props.formSchema[0]} actions={this.props.actions}/>
-            : <p>
-                Page not rendered!!!
-            </p>)
+        let renderedComponent;
+        if (this.state.showForm) {
+            renderedComponent = <LoadForm myform={this.props.formSchema[0]} actions={this.props.actions}/>;
+        } else {
+            renderedComponent = <TokenForm actions={this.props.actions} handleComponentChange={(newState) => this.changeShowFormState(newState)}/>
+        }
+        return (
+            <div>
+                {renderedComponent}
+            </div>
+        )
     }
 }
 
