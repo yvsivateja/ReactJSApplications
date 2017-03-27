@@ -3,14 +3,19 @@ import React, {Component} from 'react'
 class SelectField extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            [this.props.screenField.name]: this.props.screenField.value
-        };
+        if (this.props.screenField && this.props.screenField.choices) {
+            this.state = {
+                [this.props.screenField.name]: this.props.screenField.choices[0].name
+            };
+        }
     }
     onChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         })
+    }
+    componentDidMount() { // to load hidden fields
+        this.props.handleStateChange(this.state);
     }
     shouldComponentUpdate(nextProps, nextState) {
         this.props.handleStateChange(nextState);
@@ -22,26 +27,14 @@ class SelectField extends Component {
                 <label className="col-md-4 control-label" htmlFor={this.props.screenField.name}>
                     {this.props.screenField.label}</label>
                 <div className="col-md-4">
-                    <select
-                      name={this.props.screenField.name}
-                      id={this.props.screenField.name}
-                      value={this.state[this.props.screenField.name]}
-                      placeholder={this.props.screenField.helpText}
-                      required={this.props.screenField.isRequired}
-                      onChange={this.onChange.bind(this)}
-                      className='form-control'>
-                      {this.props.screenField.choices.map((choiceField, index) => {
-                          return (
-                              <option key={index}
-                                    name={this.props.screenField.name}
-                                    select={this.state[this.props.screenField.name] === choiceField.name}
-                                    id={choiceField.name}
-                                    onChange={this.onChange.bind(this)}
-                                    value={choiceField.name}>
-                                  {choiceField.label}
-                              </option>
-                          )
-                      })}
+                    <select name={this.props.screenField.name} id={this.props.screenField.name} value={this.state[this.props.screenField.name]} placeholder={this.props.screenField.helpText} required={this.props.screenField.isRequired} onChange={this.onChange.bind(this)} className='form-control'>
+                        {this.props.screenField.choices.map((choiceField, index) => {
+                            return (
+                                <option key={index} name={this.props.screenField.name} select={this.state[this.props.screenField.name] === choiceField.name} id={choiceField.name} onChange={this.onChange.bind(this)} value={choiceField.name}>
+                                    {choiceField.label}
+                                </option>
+                            )
+                        })}
                     </select>
                     {this.props.screenField.errorMessages
                         ? this.props.screenField.errorMessages.map((errorMessage, index) => {
@@ -50,7 +43,7 @@ class SelectField extends Component {
                             </small>
                         })
                         : null
-                    }
+}
                 </div>
             </div>
         )

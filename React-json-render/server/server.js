@@ -28,7 +28,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/startInterview', function(req, res) {
     var client = new Client();
-    //var bearerAccessToken = 'Bearer 00D550000006K7v!AQMAQDvgFo6kB39EiAjBhH4U.1sX842omrO5eunhu2ep_XEqY78UP4Ig7ZQIT1LhtzjTdZB0lGJ3Bp3vap.bsljKY1qFvJ1m';
     var bearerAccessToken = 'Bearer ' + req.headers['token'];
     var params = {
         data: [],
@@ -48,7 +47,6 @@ app.get('/startInterview', function(req, res) {
 })
 app.post('/saveUserInputs', function(req, res) {
     var client = new Client();
-    //var bearerAccessToken = 'Bearer 00D550000006K7v!AQMAQDvgFo6kB39EiAjBhH4U.1sX842omrO5eunhu2ep_XEqY78UP4Ig7ZQIT1LhtzjTdZB0lGJ3Bp3vap.bsljKY1qFvJ1m';
     var bearerAccessToken = 'Bearer ' + req.headers['token'];
     var params = {
         data: req.body.SFRequest,

@@ -46,7 +46,7 @@ let formActions = {
                 console.log("Response from Sever : ", response.data)
                 dispatch(dispatchRequest(types.LOAD_NEW_JSON_SCHEMA, response.data));
             }).catch(function(response) {
-                console.error("Error while Re-loading new Schema : " + response.data);
+                console.error("Error while Re-loading new Schema : " + response);
             })
         }
     }

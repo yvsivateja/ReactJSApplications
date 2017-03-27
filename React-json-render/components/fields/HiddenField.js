@@ -16,7 +16,7 @@ class HiddenField extends Component {
         this.props.handleStateChange(nextState);
         return false;
     }
-    componentDidMount() { // to load hidden fields
+    componentDidMount() { // to load when user do not change
         this.props.handleStateChange(this.state);
     }
     render() {
